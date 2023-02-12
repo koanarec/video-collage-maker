@@ -3,11 +3,13 @@ This program will turn a video into a video of collages. To get it working you n
 
 Put the small images you want to use in the to make up the collages, in computation/images
 
-put the video that you want to convert into the main directory, and run cut_up_video.py. This will chop the video file into lots of frames and put it in input.
+put the video that you want to convert into the main directory, Call it in.mp4
 
-Run movie maker to make the frames
+Run run cut_up_video.py. This will chop the video file into lots of frames and put it in the folder input.
 
-run combine video to turn the frames into a video file
+Run movie maker to make the frames. It will store these in output
+
+Run 'combine video.py' to turn the frames into a video file
 
 
 
