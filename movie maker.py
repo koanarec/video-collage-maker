@@ -115,28 +115,6 @@ def take_ints(name):
             int_name += x
     return int(int_name)
 
-#Splits a mp4 file into images
-def sepearte_to_img(movie_name):
-    files = glob.glob(str(pathlib.Path().resolve()) + "\\input\\*.*")
-    for f in files:
-        os.remove(f)
-    files = glob.glob(str(pathlib.Path().resolve()) + "\\output\\*.*")
-    for f in files:
-        os.remove(f)
-    vidcap = cv2.VideoCapture(movie_name)
-    success,image = vidcap.read()
-    count = 0
-    while success:
-        print('Read a new frame: ', success, count)
-         
-        image = cv2.resize(image, dsize=(collage_width, collage_height), interpolation=cv2.INTER_AREA)
-        div = 64
-        image = image // div * div + div // 2
-        cv2.imwrite("input/frame%d.png" % count, image)
-
-        success,image = vidcap.read()
-        count += 1
-
 #reads the setup file for the given dimentions of your output. The first number is the number of patches, the second is the resolution of patches
 try:
     f = open("setup.txt", "r")

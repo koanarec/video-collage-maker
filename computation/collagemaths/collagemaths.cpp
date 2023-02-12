@@ -174,6 +174,22 @@ int main(){
 
 	//Opens calculated_answer to read the answers allready calculated into finansz
 	string fname21 = "C:\\Users\\Zachary\\Desktop\\collage Movie\\computation\\calculated_answer.csv";
+
+
+	//Opens answer.csv to store the correct patches
+	fname21 = directoryPath.generic_string();
+	found = fname21.find("computation");
+	if (found != std::string::npos){
+		fname21 = fname21.substr(1, found+11);
+		fname21 = "C:/" + fname21.substr(1, fname21.size()) + "calculated_answer.csv";
+	}
+	else{
+		
+		fname21 =  fname + "/computation/answer.csv";
+	}
+	std::replace( fname21.begin(), fname21.end(), '/', '\\');
+
+
 	vector<string> row21;
 	string line21, word21;
 	fstream file21(fname21, ios::in);
